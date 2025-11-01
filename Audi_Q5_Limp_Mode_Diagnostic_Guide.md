@@ -1,5 +1,7 @@
 # Audi Q5 2.0L Limp Mode Diagnostic Guide
 
+## 2019 Audi Q5 Premium Plus 2.0L TFSI (Non-Hybrid - Without High-Voltage System)
+
 ## Issue: 3800 RPM Limitation After Thermostat/Coolant Housing Replacement
 
 ### Problem Summary
@@ -10,11 +12,13 @@ After replacing the water cooler/thermostat housing without disconnecting the ba
 
 ## Key Connectors to Check Near Thermostat/Coolant Housing Area
 
+**Note: All page numbers below are specific to 2019 Q5 2.0L without high-voltage system (non-hybrid models)**
+
 Based on the workshop manual, these are the critical connectors that may have been disturbed during the thermostat/coolant housing replacement:
 
 ### 1. **Engine Speed Sender (Crank Position Sensor) -G28-**
 
-- **PDF Page**: ~828, ~2839, ~3585, ~4317, ~5333, ~5825, ~10442, ~15686
+- **PDF Page**: Shown in procedure on Page 2998-3010 (oil pressure switch removal for Audi A4/A5, Q5 without high-voltage system)
 - **Location**: Near the thermostat housing area, connected to engine wiring harness
 - **Critical**: This sensor tells the ECM the engine RPM. If this is faulty or has a bad connection, it can cause limp mode
 - **Test**: Check connector for proper seating, corrosion, or bent pins
@@ -34,14 +38,14 @@ Based on the workshop manual, these are the critical connectors that may have be
 
 ### 4. **Coolant Shortage Indicator Sender -G32-**
 
-- **PDF Page**: ~2998, ~3020, ~3021, ~4108, ~4115 (shown in oil pressure switch procedures for Q5)
+- **PDF Page**: 2998-3010 (shown in oil pressure switch procedure for Audi A4/A5, Q5 without high-voltage system)
 - **Location**: On coolant expansion tank
 - **Test**: Check connector -4- or -5- (depending on model)
 - **Note**: This sensor monitors coolant level
 
 ### 5. **Throttle Valve Module -GX3-**
 
-- **PDF Page**: ~2635, ~7360, ~10761, ~10762, ~11286, ~15473 (Throttle valve module references)
+- **PDF Page**: Referenced in 2.0L TFSI EA888evo4 engine section (starting Page 2557)
 - **Location**: Connected to throttle body
 - **Critical**: The throttle body has multiple sensors that can cause limp mode if disconnected or damaged
 - **Components**:
@@ -52,16 +56,16 @@ Based on the workshop manual, these are the critical connectors that may have be
 
 ### 6. **Charge Pressure Sender (Turbo Boost Sensor) -G31-**
 
-- **PDF Page**: ~3403, ~4204, ~5063, ~11977 (Procedure: "Removing and installing charge pressure sender G31")
+- **PDF Page**: Referenced in 2.0L TFSI EA888evo4 engine section (starting Page 2557)
 - **Location**: Connected near intake/throttle body area
 - **Test**: Check electrical connector -1-
 
 ### 7. **Stage 3 Oil Pressure Switch -F447-**
 
-- **PDF Page**: 2999-3016 (Q5 with high-voltage system), ~14906, ~14907 (Q5 oil pressure switch procedures)
+- **PDF Page**: 2998-3010 (Audi A4/A5, Q5 without high-voltage system)
 - **Location**: Near thermostat housing, connected to oil filter bracket
 - **Test**: Check electrical connector -2-
-- **Note**: Procedure shows connectors that must be unplugged near thermostat area
+- **Note**: Procedure shows connectors that must be unplugged near thermostat area (including engine speed sender -G28- and coolant connectors)
 
 ### 8. **Engine Control Unit -J623- Main Harness**
 
@@ -89,7 +93,7 @@ For sensors, you'll need to check resistance values. Here's what to look for:
 
 #### **Engine Speed Sender -G28-**
 
-- **PDF Page**: See references above (~828, ~2839, ~3585, etc.)
+- **PDF Page**: 2998-3010 (shown in procedure for Q5 without high-voltage system)
 - Disconnect the connector
 - Measure resistance between pins (specific values will be in wiring diagrams)
 - Typical range for hall sensors: Check for open circuit (OL) or short circuit (0 ohms) - both indicate failure
@@ -135,7 +139,7 @@ With the engine running or key on:
 
 ### 1. **Engine Speed Sender -G28- (CRANK POSITION SENSOR)**
 
-- **PDF Page**: ~828, ~2839, ~3585, ~4317, ~5333, ~5825, ~10442, ~15686
+- **PDF Page**: 2998-3010 (shown in oil pressure switch procedure for Q5 without high-voltage system)
 - **Why**: If this sensor has a poor connection, the ECM can't properly determine engine speed, triggering limp mode
 - **Action**: Check this connector FIRST - it's often located near the thermostat area and easy to damage
 
@@ -154,15 +158,16 @@ With the engine running or key on:
 
 ## Manual References
 
-### Key Sections in the Workshop Manual (PDF Page Numbers):
+### Key Sections in the Workshop Manual (PDF Page Numbers - 2019 Q5 2.0L Without High-Voltage System):
 
 - **Page 2557-2558**: 2.0L TFSI EA888evo4 engine section - Table of contents
-- **Page 2739**: Removing and installing coolant temperature sender G62
-- **Page 2835**: Removing and installing radiator outlet coolant temperature sender G83
-- **Page 2999-3016**: Stage 3 oil pressure switch procedures for Q5 (shows all connectors unplugged near thermostat area)
-- **Page 3082-3091**: Coolant pump/thermostat assembly overview for Q5
-- **Page 13101**: Assembly overview - coolant pump/thermostat
-- **Page 14906-14907**: Q5 oil pressure switch procedures (with high-voltage system)
+- **Page 2739**: Removing and installing coolant temperature sender G62 (all 2.0L models)
+- **Page 2835**: Removing and installing radiator outlet coolant temperature sender G83 (all 2.0L models)
+- **Page 2998-3010**: Stage 3 oil pressure switch procedures for Audi A4/A5, Q5 without high-voltage system (shows all connectors unplugged near thermostat area)
+- **Page 3024**: Connection diagram - coolant hoses, Audi A4/A5, Q5 without high-voltage system
+- **Page 3084-3091**: Assembly overview - electric coolant pump, Audi A4/A5, Q5 without high-voltage system
+- **Page 3108**: Removing and installing coolant circulation pump V50 - Audi A4/A5, Q5 without high-voltage system
+- **Page 3114**: Removing and installing continued coolant circulation pump V51 - Audi A4/A5, Q5 without high-voltage system
 
 ### To Find in Manual:
 
@@ -204,14 +209,14 @@ Search the markdown file for:
 
 When removing the thermostat/coolant housing on a 2019 Q5 2.0L, these connectors typically need to be unplugged:
 
-1. Engine speed sender -G28- connector (PDF Page ~828, ~2839, ~3585, etc.)
+1. Engine speed sender -G28- connector (shown in PDF Page 2998-3010 procedure)
 2. Coolant temperature sender -G62- connector (PDF Page 2739)
 3. Radiator outlet temp sender -G83- connector (PDF Page 2835)
-4. Oil pressure switch -F447- connector (PDF Page 2999-3016)
-5. Throttle valve module connector (PDF Page ~2635, ~7360, etc.)
-6. Charge pressure sender -G31- connector (PDF Page ~3403, ~4204, ~5063)
-7. Coolant shortage indicator sender -G32- connector (PDF Page ~2998, ~3020)
-8. Various coolant pump connectors (PDF Page 3082-3091, 13101)
+4. Oil pressure switch -F447- connector (PDF Page 2998-3010 - Audi A4/A5, Q5 without high-voltage system)
+5. Throttle valve module connector (2.0L engine section)
+6. Charge pressure sender -G31- connector (2.0L engine section)
+7. Coolant shortage indicator sender -G32- connector (shown in PDF Page 2998-3010 procedure)
+8. Coolant circulation pump connectors (PDF Page 3084-3091, 3108, 3114 - Q5 without high-voltage system)
 9. Engine wiring harness connections
 
 **Check ALL of these for proper connection and damage!**
@@ -220,3 +225,4 @@ When removing the thermostat/coolant housing on a 2019 Q5 2.0L, these connectors
 
 _Generated from Audi Workshop Manual 2017-2023 for Q5/SQ5/RSQ5_
 _Manual available at: https://github.com/iriecoffelt/Audi-Workshop-Manuals_
+_**Important**: All page numbers are specific to 2019 Audi Q5 2.0L Premium Plus (non-hybrid, without high-voltage system)_
