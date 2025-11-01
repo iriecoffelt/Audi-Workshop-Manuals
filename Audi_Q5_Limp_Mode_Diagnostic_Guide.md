@@ -8,6 +8,8 @@
 
 After replacing the water cooler/thermostat housing without disconnecting the battery, the vehicle is in limp mode (emergency mode) limiting RPMs to 3800. This is a protective mode typically triggered by sensor/connector issues.
 
+**⚠️ CRITICAL: The electronic throttle body REQUIRES an adaptation/reset after being disconnected or worked on. This is very likely the cause of your limp mode issue!**
+
 ---
 
 ## Key Connectors to Check Near Thermostat/Coolant Housing Area
@@ -47,12 +49,14 @@ Based on the workshop manual, these are the critical connectors that may have be
 
 - **PDF Page**: Referenced in 2.0L TFSI EA888evo4 engine section (starting Page 2557)
 - **Location**: Connected to throttle body
-- **Critical**: The throttle body has multiple sensors that can cause limp mode if disconnected or damaged
+- **CRITICAL**: The throttle body has multiple sensors that can cause limp mode if disconnected or damaged
+- **⚠️ REQUIRES ADAPTATION**: The manual states "Adaptions must be performed after renewing throttle valve module" (PDF Page 2554). If the throttle body connector was unplugged during your repair, you MUST perform a throttle body adaptation using a diagnostic scanner.
 - **Components**:
   - Throttle valve drive for electric throttle
   - Throttle valve drive angle sender 1
   - Throttle valve drive angle sender 2
 - **Test**: Check main electrical connector on throttle body
+- **Action Required**: Perform throttle body adaptation using Vehicle Diagnostic Tester (OBD-II scanner with Audi-specific capabilities)
 
 ### 6. **Charge Pressure Sender (Turbo Boost Sensor) -G31-**
 
@@ -137,18 +141,25 @@ With the engine running or key on:
 
 ## Most Likely Culprits Based on Your Symptoms
 
-### 1. **Engine Speed Sender -G28- (CRANK POSITION SENSOR)**
+### 1. **⚠️ THROTTLE BODY ADAPTATION REQUIRED (MOST LIKELY CAUSE)**
+
+- **PDF Page**: 2554 ("Performing adaptions after renewing a component")
+- **Why**: If the throttle body connector was unplugged during your repair, the ECM has lost its learned throttle position calibration. Without adaptation, the ECM doesn't know the correct throttle positions and will activate limp mode for safety.
+- **Action**: **Perform throttle body adaptation using an OBD-II scanner with Audi-specific diagnostic capabilities** (like VCDS, OBDeleven, or professional scan tool). This MUST be done after any throttle body disconnection.
+- **Manual Reference**: The workshop manual explicitly states "Adaptions must be performed after renewing throttle valve module" (found in multiple locations, including procedures around PDF Page 2554+).
+
+### 2. **Engine Speed Sender -G28- (CRANK POSITION SENSOR)**
 
 - **PDF Page**: 2998-3010 (shown in oil pressure switch procedure for Q5 without high-voltage system)
 - **Why**: If this sensor has a poor connection, the ECM can't properly determine engine speed, triggering limp mode
-- **Action**: Check this connector FIRST - it's often located near the thermostat area and easy to damage
+- **Action**: Check this connector - it's often located near the thermostat area and easy to damage
 
-### 2. **Throttle Body Connection**
+### 3. **Throttle Body Connection**
 
 - **Why**: The throttle body has multiple sensors. If any connection is loose, limp mode activates
-- **Action**: Disconnect and reconnect the throttle body connector, ensuring it clicks into place
+- **Action**: Disconnect and reconnect the throttle body connector, ensuring it clicks into place, THEN perform throttle body adaptation
 
-### 3. **Coolant Temperature Sensor -G62-**
+### 4. **Coolant Temperature Sensor -G62-**
 
 - **PDF Page**: 2739
 - **Why**: False temperature readings can cause protective limiting
@@ -160,6 +171,7 @@ With the engine running or key on:
 
 ### Key Sections in the Workshop Manual (PDF Page Numbers - 2019 Q5 2.0L Without High-Voltage System):
 
+- **Page 2554**: ⚠️ **CRITICAL**: "Performing adaptions after renewing a component" - Includes throttle body adaptation procedure
 - **Page 2557-2558**: 2.0L TFSI EA888evo4 engine section - Table of contents
 - **Page 2739**: Removing and installing coolant temperature sender G62 (all 2.0L models)
 - **Page 2835**: Removing and installing radiator outlet coolant temperature sender G83 (all 2.0L models)
@@ -184,24 +196,36 @@ Search the markdown file for:
 
 ## Important Notes
 
-1. **Battery Disconnection**: Since you didn't disconnect the battery, the ECM may have stored fault codes when connectors were unplugged with key on. Consider:
+1. **⚠️ THROTTLE BODY ADAPTATION (CRITICAL - DO THIS FIRST!)**:
+
+   - If you unplugged the throttle body connector during the thermostat replacement, you MUST perform a throttle body adaptation
+   - The manual explicitly requires this: "Adaptions must be performed after renewing throttle valve module"
+   - Use an OBD-II scanner with Audi diagnostic capabilities:
+     - **VCDS** (VAG-COM) - popular for DIY
+     - **OBDeleven** - mobile app-based
+     - **Professional scan tool** - at a shop or dealership
+   - The adaptation procedure calibrates the throttle position sensors so the ECM knows the correct throttle angles
+   - Without this, the ECM will limit RPMs for safety (limp mode)
+   - **This is very likely the cause of your 3800 RPM limitation!**
+
+2. **Battery Disconnection**: Since you didn't disconnect the battery, the ECM may have stored fault codes when connectors were unplugged with key on. Consider:
 
    - Disconnecting battery for 30 minutes to reset ECM
    - Clearing codes with OBD-II scanner
    - Re-checking all connectors after reset
 
-2. **Connector Cleaning**: If connectors got wet or dirty during repair:
+3. **Connector Cleaning**: If connectors got wet or dirty during repair:
 
    - Clean with electrical contact cleaner
    - Ensure connectors are completely dry before reconnecting
 
-3. **Wiring Damage**: Check for wires that may have been:
+4. **Wiring Damage**: Check for wires that may have been:
 
    - Pinched during reassembly
    - Pulled or stretched
    - Cut by sharp edges
 
-4. **Testing Order**: Start with visual inspection, then check most critical sensors (G28, throttle body) before moving to others.
+5. **Testing Order**: Start with visual inspection, then check most critical sensors (G28, throttle body) before moving to others.
 
 ---
 
